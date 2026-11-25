@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- "initial-scale=1.0" ES EL ZOON QUE VA A TENER LA PAGINA EN LOS DISPOSITIVOS -->
+    <title>Pisoctesti | Acceso</title> <!-- "LO QUE SALE EN LA PESTAÑA DE ARRIBA-->
+    <link rel="stylesheet" href="estilos.css"> <!-- "SIRVE PARA CONECTAR EL HTM CON CSS"-->
+</head>
+
+<body>
+
+ 
+   
+
+ <!-- PANTALLA DE LOGIN -->
+    <div id="login" class="login-container">  <!-- CONTENEDOR-->
+        <div class="login-box">
+
+            <img src="BANNER_PSICOTESTI.png" alt="Logo" class="logo-login">
+
+            <h1>BIENVENIDO</h1>
+            <p>INICIO DE SESIÓN</p>
+
+            <label>USUARIO</label>  <!-- "LABEL" SIGNIFICA ETIQUETA-->
+            <input type="text" id="usuario" placeholder="Ingresa tu usuario">  <!-- "IMPUT" ENTRADA D E DATIS, ESA LINEA HACE QUE NO SE VE EL CONTENIDO-->
+
+            <label>CONTRASEÑA</label>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña">
+
+            <button onclick="iniciarSesion()">INGRESAR</button>
+
+
+          
+
+            <p id="mensaje"></p>
+
+        </div>
+    </div>
+
+
+    
+
+
+
+
+     
+
+
+
+    <!-- PANTALLA PRINCIPAL -->
+    <div id="sistema" class="sistema-container" style="display:none;">  <!-- DIV ES CONTENEDOR, id="sistema" ESTO ASIGNA UN IDENTIFICADOR, class="sistema-container" ESTO ES PARA MODIFICAR EN CSS, style="display:none;" ESO HACE QUE EL CONTENEDOR APARESACA OCULTO  -->
+
+        <header class="encabezado"> <!-- HARDER ES LA CINTA DE ENCABEZADO, CLASS ENCABEZADO SIRVE PARA DAR STILO EN CSS  -->
+            <h2>📋 PSICOTESTI</h2>
+
+            <div>
+                Usuario: <span id="usuarioActivo"></span>
+              
+
+
+                <button class="btn-salir" onclick="cerrarSesion()">
+                ⏻ SALIR</button>
+                <button class="btn-regresar" onclick="mostrarInicio()">
+                ⮪ REGRESAR
+                </button>
+            </div>
+        </header>
+
+        <div class="layout">
+
+            <aside class="menu-lateral">
+
+                <button onclick="mostrarSeccion(1)">BASE</button>
+                <button onclick="mostrarSeccion(2)">VACANTES</button>
+                <button onclick="mostrarSeccion(3)">3</button>
+                <button onclick="mostrarSeccion(4)">4</button>
+
+            </aside>
+
+            <main class="contenido">
+
+                <section id="seccion-inicio" class="seccion">
+                   <h3>BIENVENIDO A NUESTRO SISTEMA INTEGRAL</h3>
+               
+                         <div>
+    <input type="text" id="nombre" placeholder="Escribe un nombre">
+
+    <button onclick="guardarNombre()">GUARDAR</button>
+</div>
+
+<br>
+
+<table border="1" id="tablaNombres">
+    <thead>
+        <tr>
+            <th>NOMBRE</th>
+        </tr>
+    </thead>
+
+    <tbody id="contenidoTabla">
+    </tbody>
+</table>
+
+
+
+
+
+
+                
+                </section>
+
+
+
+                            
+
+
+
+               
+                   
+                <!-- CONTENEDOR DEL CUESTIONARIO CLEVAER -->
+                     
+    <section id="seccion-1" class="seccion" style="display:none;">
+
+    <h1>BASE DE RECLUTAMIENTO</h1>
+
+    <div class="contenedor-base">
+
+        <div class="tabla-scroll">
+
+            <table id="tabla-base">
+
+                <thead>
+                    <tr>
+                        <th>CEDIS</th>
+                        <th>VACANTE</th>
+                        <th>NOMBRE</th>
+                        <th>ESTUDIOS</th>
+                        <th>ENTREVISTA</th>
+                        <th>HORA DE ENTREVISTA</th>
+                        <th>EDAD</th>
+                        <th>TELEFONO</th>
+                        <th>DOMICILIO</th>
+                        <th>PAGADO</th>
+                        <th>SI SE PRESENTO</th>
+                        <th>NO SE PRESENTO</th>
+                        <th>CONTRATADO</th>
+                        <th>REAGENDA</th>
+                        <th>OBSERVACIONES</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+
+                       
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+
+
+                        <td><input type="checkbox" onchange="cambiarColorFila(this)"></td>
+
+
+                        <td contenteditable="true"></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+ </section>
+
+
+
+
+
+                <section id="seccion-2" class="seccion" style="display:none;">
+                    <h1>VACANTES</h1>
+
+
+                        <div id="pro" class="container">  <!-- CONTENEDOR-->
+                   
+    
+                          
+                    <div id="pro" class="container">  <!-- CONTENEDOR-->
+                   
+                        <div class="lista-vacantes">
+                               
+                            <ol>
+                              
+                              <h4>DIGITAL MARKET</h4>
+                             
+                              <li>OLA, MEGA PARK</li>
+                              <li>OLA, LA FINCA</li>
+                              <li>AUX. DE PREVENCIÓN</li>
+                              <li>ALIMENTADOR</li>
+                              <li>ANALISTA DE GESTIÓN DE INVENTARIOS</li>
+                              <li>ARMADOR</li>
+                              <li>AUDITOR DE CALIDAD</li>
+                              <li>AYUDANTE GENERAL</li>
+                              <li>BECARIO</li>
+                              <li>COORDINADOR</li>
+                              <li>INSPECTOR DE CALIDAD</li>
+                              <li>JEFE DE OPERACIONES</li>
+                              <li>PREPARADOR</li>
+                              <li>RECIBIDOR</li>
+                              <li>SUPERVISOR</li>
+                              <li>TECNICO EN MANTENIMIENTO</li>
+
+
+
+
+
+
+
+                            </ol>
+
+                        </div>
+
+                        <div class="lista-vacantes1">
+                               
+                            <ol>
+                              
+                              <h4>CHEDRAHUI</h4>
+                             
+                              <li>AUX. DE PREVENCIÓN</li>
+                              <li>ALIMENTADOR</li>
+                              <li>ANALISTA DE GESTIÓN DE INVENTARIOS</li>
+                              <li>ARMADOR</li>
+                              <li>AUDITOR DE CALIDAD</li>
+                              <li>AYUDANTE GENERAL</li>
+                              <li>BECARIO</li>
+                              <li>COORDINADOR</li>
+                              <li>INSPECTOR DE CALIDAD</li>
+                              <li>JEFE DE OPERACIONES</li>
+                              <li>PREPARADOR</li>
+                              <li>RECIBIDOR</li>
+                              <li>SUPERVISOR</li>
+                              <li>TECNICO EN MANTENIMIENTO</li>
+
+
+
+
+
+
+
+
+                            </ol>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                    </div>
+
+                        
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                        
+                        
+                        
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                      <section id="seccion-inicio" class="seccion">
+                   <h3>BIENVENIDO A NUESTRO SISTEMA INTEGRAL</h3>
+               
+
+
+                  
+
+
+
+
+
+
+
+
+                </section>
+
+                <section id="seccion-3" class="seccion" style="display:none;">
+                    <h1>VENTANA 3</h1>
+                </section>
+
+                <section id="seccion-4" class="seccion" style="display:none;">
+                    <h1>VENTANA 4</h1>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+
+    <!-- NUEVA VENTANA DE VACANTES -->
+    <div id="ventana-vacantes" style="display:none;">
+
+        <header class="encabezado">
+            <h2>MODULO DE VACANTES</h2>
+
+            <button onclick="regresarPrincipal()">
+                REGRESAR
+            </button>
+        </header>
+
+        <div class="layout-vacantes">
+
+            <!-- CONTENIDO IZQUIERDO -->
+            <main class="contenido-vacantes">
+
+                <section id="vacante-inicio">
+                    <h1>ADMINISTRACIÓN DE VACANTES</h1>
+                    <p>Selecciona una opción del menú derecho.</p>
+                </section>
+
+                <section id="vacante-1" class="subseccion" style="display:none;">
+                    <h1>AYUDANTE GENERAL DE ALMACEN
+                        
+                         <h1>LLLLLLLL</h1>
+
+
+
+                         <H1>JJJJJJJJJJ</H1>
+
+                       
+
+                    </h1>
+                    <p>Contenido de la opción 1.</p>
+                </section>
+
+                
+
+
+          
+
+        </div>
+    </div>
+
+    <script src="sistema.js"></script>
+
+</body>
+</html>
